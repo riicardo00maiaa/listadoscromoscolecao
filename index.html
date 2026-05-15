@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cromos Mundial 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div>
+      <div class="logo">Mundial 2026</div>
+      <div class="subtitle">&nbsp;·&nbsp;CROMOS CARALHO</div>
+    </div>
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-val green" id="s-have">0</div>
+        <div class="stat-lbl">Tenho</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val red" id="s-miss">0</div>
+        <div class="stat-lbl">Faltam</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val gold" id="s-total">0</div>
+        <div class="stat-lbl">Total</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">
+          <span>Progresso</span>
+          <span id="s-pct">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Pesquisar país..." oninput="filterTable()">
+    <button class="filter-btn active" onclick="setFilter('all', this)">Todos</button>
+    <span class="save-badge" id="save-badge">✓ Guardado</span>
+    <button class="reset-btn" onclick="resetAll()">Reiniciar tudo</button>
+  </div>
+
+  <main>
+    <div class="section-title">Seleções — Cromos 1 a 20</div>
+    <table id="main-table">
+      <thead>
+        <tr id="header-row">
+          <th>País</th>
+          <th class="th-have">Têm</th>
+          <th class="th-miss">Faltam</th>
+
+        </tr>
+      </thead>
+      <tbody id="tbody">
+
+      </tbody>
+    </table>
+
+
+    <div class="fwc-section">
+      <div class="section-title">Cromos Especiais FWC</div>
+      <div class="fwc-grid" id="fwc-grid">
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Clica em cada cromo para alternar entre ✕ (não tenho) e ✓ (tenho)
+    &nbsp;·&nbsp;
+    Progresso guardado automaticamente no browser
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
